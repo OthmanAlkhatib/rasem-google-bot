@@ -52,13 +52,11 @@ def search_handler(update: Update, context: CallbackContext):
         sh = update.message.text.split(" ", 1)
         link = search_api(sh[1])
     except Exception as error:
-        if update.message.chat.username == "gehad100" :
-            update.message.reply_text("قلي سيدي")
-        else:
-            update.message.reply_text("تفه")
+        print(update.message.chat)
+        update.message.reply_text("تفه")
         print(error)
         return
-    
+
     update.message.reply_text(link)
 
 
